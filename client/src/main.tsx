@@ -3,12 +3,20 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import { ChakraProvider } from '@chakra-ui/react'
+import {BrowserRouter} from 'react-router-dom'
+import theme from "./theme"
+import {Auth0Provider} from "@auth0/auth0-react"
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChakraProvider>
+    <Auth0Provider domain="dev-6277-9jy.us.auth0.com" clientId="P4P5a3ZupOjQ6QXuOHqk3VrWEa3WohNU">
+    <BrowserRouter>
+    <ChakraProvider theme={theme}>
     <App />
     </ChakraProvider>
+    </BrowserRouter>
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
 )
