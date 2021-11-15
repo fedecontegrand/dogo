@@ -5,14 +5,14 @@ import { Box } from '@chakra-ui/layout'
 
 function Home() {
 
-    const {user}=useAuth0()
+    const {user,isAuthenticated}=useAuth0()
 
     useEffect(() => {
         console.log(user)
         return () => {
            
         }
-    }, [])
+    }, [isAuthenticated])
 
     return (
      <Box width="100vw" height="100vh" backgroundColor="red"></Box>
