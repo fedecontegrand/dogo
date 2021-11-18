@@ -8,6 +8,7 @@ import { Image } from '@chakra-ui/image'
 import { CircularProgress } from '@chakra-ui/progress'
 import { User } from '../types'
 import { Avatar } from '@chakra-ui/avatar'
+import SimpleSidebar from '../components/NavBar'
 
 function Home() {
 
@@ -32,7 +33,7 @@ function Home() {
     }, [isAuthenticated])
 
     return (
-     <Box width="100vw" height="100vh" backgroundColor="teal">
+     <Box >
          {userDB ? (
              <Box>
              <Text>{userDB?.firstName}</Text>
