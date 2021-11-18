@@ -25,7 +25,7 @@ export default function LandingPage(): ReactElement {
         backgroundPosition="center"
         display="flex"
         flexWrap="wrap"
-        flexDirection="row-reverse"
+        flexDirection={{base:"row",md:"row-reverse"}}
         alignItems="center"
         padding="auto"
         >

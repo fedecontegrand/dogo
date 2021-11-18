@@ -7,23 +7,19 @@ module.exports=sequelize=>{
             unique: true,
             primaryKey: true,
         },
-        nombre: {
+        firstName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        apellido: {
+        lastName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        usuario: {
+        nickname: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
         },
-          // password: {
-          //   type: DataTypes.STRING,
-          //   allowNull: false,
-          // },
         email: {
             type: DataTypes.STRING,
             unique: true,
@@ -33,24 +29,25 @@ module.exports=sequelize=>{
             type: DataTypes.BOOLEAN,
             defaultValue: false,
         },
-        imagen: {
+        picture: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        direccion:{
+        street:{
             type:DataTypes.STRING,
-            allowNull:true,
             defaultValue:"Unknown"
         },
         // blocked: {
         //     type: DataTypes.BOOLEAN,
         //     defaultValue: false,
         // },
-        ciudad: {
-            type: DataTypes.TEXT
+        city: {
+            type: DataTypes.TEXT,
+            defaultValue:"Unknown"
         },
-        provincia: {
-            type: DataTypes.TEXT
+        state: {
+            type: DataTypes.TEXT,
+            defaultValue:"Unknown"
         }
     })
 }
