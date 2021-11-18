@@ -7,6 +7,13 @@ module.exports=sequelize=>{
         }, 
         sex:{
             type:DataTypes.ENUM('Macho','Hembra')
+        },
+        age:{
+            type:DataTypes.NUMBER,
+            allowNull:false
+        },
+        race:{
+            type:DataTypes.STRING,
         }
     })
 }

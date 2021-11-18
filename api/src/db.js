@@ -53,12 +53,17 @@ let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].s
 sequelize.models = Object.fromEntries(capsEntries);
 
 
-const { User, Pet } = sequelize.models;
+const { User, Pet, LostPet } = sequelize.models;
 
 //Relations 
 User.hasMany(Pet);
 Pet.belongsTo(User)
 //Product.belongsToMany(Categories, {through: 'products_categories'});
+User.hasMany(LostPet)
+LostPet.belongsTo(User)
+
+LostPet.belongsTo(Pet)
+Pet.belongsTo(LostPet)
 
 
 module.exports = {

@@ -9,10 +9,11 @@ import {
   Link,
   Drawer,
   DrawerContent,
-  Text,
+  Heading,
   useDisclosure,
   BoxProps,
   FlexProps,
+  Avatar
 } from '@chakra-ui/react';
 import {
   FiHome,
@@ -25,6 +26,8 @@ import {
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
 import logo from "../images/logo.svg"
+import { useSelector } from 'react-redux';
+import { stateType } from '../reducer';
 
 interface LinkItemProps {
   name: string;
@@ -133,6 +136,8 @@ interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+    const name=useSelector((state:stateType)=>state.userDB?.firstName)
+    const avatar=useSelector((state:stateType)=>state.userDB?.picture)
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -142,7 +147,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       bg={useColorModeValue('white', 'gray.900')}
       borderBottomWidth="1px"
       borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
-      justifyContent="flex-start"
+      justifyContent="space-between"
       {...rest}>
       <IconButton
         variant="outline"
@@ -151,7 +156,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         icon={<FiMenu />}
       />
 
-      <img src={logo} alt="logo" />
+      <Box display="flex" alignItems="center"><Heading marginLeft="auto">Hola {name}!</Heading><Avatar src={avatar} /></Box>
     </Flex>
   );
 }

@@ -20,3 +20,14 @@ export interface UserAuth0{
     picture:string | undefined;
     sub:string | undefined;
 }
+
+export interface Pet{
+    species: "dog" | "cat";
+    age: number;
+    sex: "male" | "female";
+    race: string;
+}
+
+export interface allMissingPets extends Pet{
+    user:User
+}
