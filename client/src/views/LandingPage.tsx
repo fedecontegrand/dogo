@@ -24,13 +24,13 @@ export default function LandingPage(): ReactElement {
         backgroundSize="cover" 
         backgroundPosition="center"
         display="flex"
+        flexWrap="wrap"
         flexDirection="row-reverse"
         alignItems="center"
-        padding="2rem"
+        padding="auto"
         >
-         <motion.div animate={{ x: [-500, 0] }}>
-         <MotionBox 
-          width="50rem"
+         <motion.div animate={{ y: [700, 0] }} style={{display:"flex",flexWrap:"wrap"}}>
+         <MotionBox
           border="0px solid gray"
           borderRadius="10px"
           padding="1rem"
@@ -38,11 +38,11 @@ export default function LandingPage(): ReactElement {
           flexDirection="column"
           justifyContent="center"
           backdropFilter="blur(4px)"
+          flexWrap="wrap"
          >
             <Heading
             fontSize="6xl"
             color="primary.500"
-            margin="auto"
             marginBottom="2rem"
             >
             Bienvenido a Dogo     
@@ -51,25 +51,25 @@ export default function LandingPage(): ReactElement {
               La plataforma ideal para contactarnos y poder 
               darle la mejor vida a nuestras queridas mascotas.  
             </Text>
-            <Text marginBottom="2rem" color="white">
+            {/* <Text marginBottom="2rem" color="white">
                 Contactate con otros dueños, da en adopción o adopta 
                 animales en tránsito, emití alertas en tu zona cuando 
                 no encuentres a tu amigo y mucho más...
-            </Text>
+            </Text> */}
             <Stack direction="column" divider={<StackDivider borderColor="grey"/>}>
                 <Box display="flex" alignItems="center">
-                <Image src={adopcion} boxSize="6rem"/>
+                <Image src={adopcion} boxSize={{base:"2rem", md:"4rem"}}/>
                 <Text marginLeft="2rem" color="white"> Regala / Adopta animales en tránsito</Text>
                 </Box>
-                <Box display="flex" alignItems="center">
-                <Image src={cruzar} boxSize="6rem"/>
+                <Box display="flex" alignItems="center" >
+                <Image src={cruzar} boxSize={{base:"2rem", md:"4rem"}}/>
                 <Text marginLeft="2rem" color="white">Encontrá pareja para tu compañero de cuatro patas</Text>
                 </Box>
                 <Box display="flex" alignItems="center">
-                <Image src={perdido} boxSize="6rem"/>
+                <Image src={perdido} boxSize={{base:"2rem",md:"4rem"}}/>
                 <Text marginLeft="2rem" color="white">Buscá y ayudá a encontrar a los que extrañamos tanto :´( </Text>
                 </Box>
-            <Button onClick={()=> loginWithRedirect()} backgroundColor="primary.100">Ingresa</Button>
+            <Button onClick={()=> loginWithRedirect()} backgroundColor="primary.100" marginTop={{base:"0.25rem", md:"1rem"}}>Ingresa</Button>
             </Stack>
          </MotionBox>
          </motion.div>
